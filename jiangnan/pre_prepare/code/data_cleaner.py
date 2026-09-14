@@ -6,7 +6,7 @@
 import sys
 import os
 # 把common文件夹加入路径，才能导入公共工具
-sys.path.append(os.path.join(os.path.dirname(__file__), '../common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../common'))
 
 import math
 from config import MIN_SEGMENT_LENGTH, SIGMA_TIMES
