@@ -4,16 +4,16 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../common'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'code'))
 
-from ganden_loader import load_one_garden
+from garden_loader import load_one_garden
 from geometry import polyline_length
 
 # ====================== 配置区 ======================
 # 要处理的园林名称
 GARDEN_NAME='寄畅园'
 # 对应Excel文件路径
-EXCEL_PATH='../dataset/寄畅园.xlsx'
+EXCEL_PATH='jiangnan/dataset/3. 寄畅园/4-寄畅园数据坐标.xlsx'
 # 输出文件夹
-OUTPUT_DIR='./output'
+OUTPUT_DIR='jiangnan\\pre_prepare\\output'
 # ===================================================
 
 if __name__=='__main__':
