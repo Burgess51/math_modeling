@@ -46,6 +46,10 @@ if __name__=='__main__':
     build_segs=garden['实体建筑']['segments']
     result_lines.append(f'实体建筑数量：{len(build_segs)}栋')
 
+    #统计半开放建筑
+    semi_build_segs=garden['半开放建筑']['segments']    
+    result_lines.append(f'半开放建筑数量：{len(semi_build_segs)}栋')
+
     #统计植物
     result_lines.append(f'植物数量：{len(garden["植物"])}棵')
 

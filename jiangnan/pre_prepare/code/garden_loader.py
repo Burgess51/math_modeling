@@ -32,7 +32,7 @@ def load_one_garden(excel_path):
 
     for name,is_closed in element_config.items():
         # 读取对应工作表，不要表头
-        df=pd.read_excel(xls, sheet_name=name, header=None)
+        df=pd.read_excel(xls, sheet_name=name, header=0)
         # 第1列：区分线段
         segments=parse_segment_column(df.iloc[:,0], is_closed)
         # 第2列：不区分线段
@@ -45,7 +45,7 @@ def load_one_garden(excel_path):
     # --------------------------
     # 植物单独处理
     # --------------------------
-    df_plant=pd.read_excel(xls, sheet_name='植物', header=None)
+    df_plant=pd.read_excel(xls, sheet_name='植物', header=0)
     plants=parse_plants(df_plant.iloc[:,0],df_plant.iloc[:,1])
     garden['植物']=plants
 

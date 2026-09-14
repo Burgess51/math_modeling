@@ -27,10 +27,10 @@ def parse_one_cell(cell_str):
         return ('segment', seg_id)
 
     # 匹配坐标点：格式是 {x, y, 0}
-    point_match=re.match(r'\{-?\d+(\.\d+)?,\s*(-?\d+(\.\d+)?),\s*0\}', cell_str)
+    point_match=re.match(r'^(\d+\.\s*)?\{(-?\d+\.?\d*),\s*(-?\d+\.?\d*),\s*0\}', cell_str)
     if point_match:
-        x=float(point_match.group(1))*MM_TO_M  # 转成米
-        y=float(point_match.group(2))*MM_TO_M
+        x=float(point_match.group(2))*MM_TO_M  # 转成米
+        y=float(point_match.group(3))*MM_TO_M
         return ('point', (x, y))
 
     # 都匹配不上就是无效内容
