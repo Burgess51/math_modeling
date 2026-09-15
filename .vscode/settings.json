@@ -1,5 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "${workspaceFolder}/common"
-    ]
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completion.maxItems":200
 }

@@ -31,6 +31,7 @@ def line_features(points):
     # 方向向量归一化，方便计算夹角
     dir_len=math.sqrt(direction[0]**2+direction[1]**2)
     if dir_len>0:
+        #cos和sin的值保存为元组
         direction_norm=(direction[0]/dir_len, direction[1]/dir_len)
     else:
         direction_norm=(0,0)
@@ -48,6 +49,7 @@ def line_features(points):
 
 def angle_between_dirs(dir1,dir2):
     """计算两个归一化方向向量的夹角，单位：度，范围0~180"""
+    '''两个向量的夹角'''
     dot=dir1[0]*dir2[0]+dir1[1]*dir2[1]
     # 限制dot在[-1,1]范围内，避免数值误
     dot=max(-1.0,min(1.0,dot))
