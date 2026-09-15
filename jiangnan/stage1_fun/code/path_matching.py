@@ -2,10 +2,22 @@
 
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../common'))
+from pathlib import Path
+# 当前脚本文件路径
+current_file = Path(__file__).resolve()
+
+# 找到目标文件夹 C
+# parents[0] = 当前脚本所在文件夹 B
+# parents[1] = B 的上一级 A
+# parents[2] = A 的上一级 /root
+target_dir = current_file.parents[2] / "common"
+
+# 把目标文件夹加入 sys.path
+if str(target_dir) not in sys.path:
+    sys.path.append(str(target_dir))
 
 import math
-from geometry import polyline_length, points_centroid
+from geometry import polyline_length, point_centroid
 
 #====================== 配对阈值配置======================
 ANGEL_THRESHOLD=15  # 角度阈值，单位：度
@@ -20,7 +32,7 @@ def line_features(points):
     返回：方向向量、长度、中点、起点、终点
     """
     length=polyline_length(points)
-    centroid=points_centroid(points)
+    centroid=point_centroid(points)
     start=points[0]
     end=points[-1]
 

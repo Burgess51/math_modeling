@@ -2,6 +2,7 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../common'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../pre_prepare/code'))
 
 from garden_loader import load_one_garden
 from path_matching import match_and_get_centerlines

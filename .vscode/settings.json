@@ -1,6 +1,8 @@
 {
     "python.analysis.extraPaths": [
-        "${workspaceFolder}/common"
+        "${workspaceFolder}/common",
+        "./jiangnan/common",
+        "./jiangnan/pre_prepare/code"
     ],
     "python.analysis.autoImportCompletions": true,
     "python.analysis.completion.maxItems":200
