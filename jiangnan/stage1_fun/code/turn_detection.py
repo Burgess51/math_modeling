@@ -63,7 +63,7 @@ def find_all_intersections(centerlines):
             for a in range(len(line1)-1):
                 for b in range(len(line2)-1):
                     seg1_start=line1[a]
-                    seg1_end=line2[a+1]
+                    seg1_end=line1[a+1]
                     seg2_start=line2[b]
                     seg2_end=line2[b+1]
 
